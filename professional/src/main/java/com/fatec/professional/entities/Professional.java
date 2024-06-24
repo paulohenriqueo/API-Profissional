@@ -8,18 +8,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "TBL_PROFESSIONAL")
+@Table(name="TBL_PROFESSIONAL")
 public class Professional {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
+    @Column (length = 40)
     private String name;
 
-    private String hour;
-    
+    private String hourlyRate;
+
     private String area;
 
     public Integer getId() {
@@ -35,10 +35,10 @@ public class Professional {
         this.name = name;
     }
     public String getHour() {
-        return hour;
+        return hourlyRate;
     }
-    public void setHour(String hour) {
-        this.hour = hour;
+    public void setHour(String hourlyRate) {
+        this.hourlyRate = hourlyRate;
     }
     public String getArea() {
         return area;
